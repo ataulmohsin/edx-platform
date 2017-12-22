@@ -243,14 +243,6 @@ def get_course_runs_for_course(course_uuid):
         return []
 
 
-def get_visible_course_runs_for_entitlement(entitlement):
-    """
-    Returns only the course runs that the user can currently enroll in.
-    """
-    sessions_for_course = get_course_runs_for_course(entitlement.course_uuid)
-    return get_fulfillable_course_runs_for_entitlement(entitlement, sessions_for_course)
-
-
 def get_fulfillable_course_runs_for_entitlement(entitlement, course_runs):
     """
     Takes a list of course runs and returns only the course runs that:
